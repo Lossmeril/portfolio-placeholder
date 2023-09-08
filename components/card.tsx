@@ -11,9 +11,10 @@ interface GalleryCardProps {
 const GalleryCard: React.FC<GalleryCardProps> = ({ item }) => {
   return (
     <Card
-      className="w-[250px] h-[250px] col-span-12 sm:col-span-5"
+      className="w-[200px] h-[250px] col-span-12 sm:col-span-5 outline outline-1 outline-neutral-800"
       isHoverable
       isPressable
+      isFooterBlurred
     >
       <Image
         alt={item.name}

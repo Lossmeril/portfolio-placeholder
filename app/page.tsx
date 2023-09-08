@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { portfolioItems } from "@/data/portfolioItems";
+import portfolioItems from "@/data/portfolioItems";
 import GalleryCard from "@/components/card";
 
 const Home = () => {
