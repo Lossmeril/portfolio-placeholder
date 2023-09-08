@@ -3,6 +3,8 @@ export type Tag = {
   color: string;
 };
 
+// --------- PORTFOLIO
+
 export type PortfolioItem = {
   name: string;
   image: string;
@@ -11,14 +13,10 @@ export type PortfolioItem = {
 
 export type GalleryItem = {
   tag: Tag;
-  equipment: string[];
+  equipment?: string[];
 } & PortfolioItem;
 
-export type FilmAward = {
-  festival: string;
-  award: string;
-  year: Number;
-};
+// --------- FILM
 
 export type Film = {
   synopsis: string;
@@ -27,3 +25,9 @@ export type Film = {
   playLink?: string;
   festivals?: FilmAward[];
 } & PortfolioItem;
+
+export type FilmAward = {
+  festival: string;
+  award: string;
+  year: Number;
+};
