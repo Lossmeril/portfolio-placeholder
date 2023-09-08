@@ -1,26 +1,26 @@
-type Tag = {
+export type Tag = {
   name: string;
   color: string;
 };
 
-type PortfolioItem = {
+export type PortfolioItem = {
   name: string;
   image: string;
   year: Number;
 };
 
-type GalleryItem = {
+export type GalleryItem = {
   tag: Tag;
   equipment: string[];
 } & PortfolioItem;
 
-type FilmAward = {
+export type FilmAward = {
   festival: string;
   award: string;
   year: Number;
 };
 
-type Film = {
+export type Film = {
   synopsis: string;
   runtime: number;
   link?: string;
