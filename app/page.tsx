@@ -8,7 +8,7 @@ import GalleryCard from "@/components/card";
 const Home = () => {
   return (
     <main className="w-full h-full">
-      <div className="w-full flex flex-row flex-wrap gap-4">
+      <div className="w-[80%] flex flex-row flex-wrap gap-4 mx-auto justify-center">
         {portfolioItems.map((item) => (
           <GalleryCard key={item.name} item={item} />
         ))}

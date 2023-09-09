@@ -1,11 +1,11 @@
 import { GalleryItem, Tag } from "./types";
 
 export const tags: Array<Tag> = [
-  { name: "design", color: "green" },
-  { name: "digital art", color: "bubble-gum" },
-  { name: "branding", color: "indigo" },
-  { name: "photography", color: "amber" },
-  { name: "concept art", color: "yellow" },
+  { name: "design" },
+  { name: "digital art" },
+  { name: "branding" },
+  { name: "photography" },
+  { name: "concept art" },
 ];
 
 export enum tagEnum {
@@ -25,19 +25,19 @@ const photos: Array<GalleryItem> = [
     equipment: ["Canon EOS RP"],
   },
   {
-    name: "Theatre Photography 1",
+    name: "Theatre Photography",
     tag: tags[tagEnum.photography],
     image: "/img/photos/theatre-1.jpg",
     year: 2022,
   },
   {
-    name: "Theatre Photography 2",
+    name: "Theatre Photography",
     tag: tags[tagEnum.photography],
     image: "/img/photos/theatre-2.jpg",
     year: 2022,
   },
   {
-    name: "Theatre Photography 3",
+    name: "Theatre Photography",
     tag: tags[tagEnum.photography],
     image: "/img/photos/theatre-3.jpg",
     year: 2022,
@@ -86,6 +86,13 @@ const art: Array<GalleryItem> = [
     equipment: ["Adobe Illustrator"],
   },
   {
+    name: "Dreams on a tape",
+    tag: tags[tagEnum.digitalArt],
+    image: "/img/art/dreams on a tape.jpg",
+    year: 2023,
+    equipment: ["Adobe Photoshop", "Adobe Illustrator"],
+  },
+  {
     name: "Ghibli Vibes",
     tag: tags[tagEnum.digitalArt],
     image: "/img/art/ghibli vibes.jpg",
@@ -106,8 +113,53 @@ const art: Array<GalleryItem> = [
     year: 2022,
     equipment: ["Adobe Photoshop", "Adobe Illustrator"],
   },
+  {
+    name: "Queen of Wands",
+    tag: tags[tagEnum.digitalArt],
+    image: "/img/art/queen of wands.jpg",
+    year: 2021,
+    equipment: ["Adobe Illustrator"],
+  },
+  {
+    name: "Queen of Cups",
+    tag: tags[tagEnum.digitalArt],
+    image: "/img/art/queen of cups.jpg",
+    year: 2021,
+    equipment: ["Adobe Illustrator"],
+  },
+  {
+    name: "The Emperor",
+    tag: tags[tagEnum.digitalArt],
+    image: "/img/art/the emperor.jpg",
+    year: 2021,
+    equipment: ["Adobe Illustrator"],
+  },
+  {
+    name: "The Lovers",
+    tag: tags[tagEnum.digitalArt],
+    image: "/img/art/the lovers.jpg",
+    year: 2021,
+    equipment: ["Adobe Illustrator"],
+  },
+  {
+    name: "The Magician",
+    tag: tags[tagEnum.digitalArt],
+    image: "/img/art/the magician.jpg",
+    year: 2021,
+    equipment: ["Adobe Illustrator"],
+  },
 ];
 
-const portfolioItems = art.concat(photos);
+const design: Array<GalleryItem> = [
+  {
+    name: "I Became a New Pirate",
+    tag: tags[tagEnum.design],
+    image: "/img/design/i became a new pirate.jpg",
+    year: 2022,
+    equipment: ["Adobe Photoshop"],
+  },
+];
+
+const portfolioItems = art.concat(photos).concat(design);
 
 export default portfolioItems;

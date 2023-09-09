@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.custom-card {
+  .card-img {
+    transition: all ease-in-out 0.25s;
+    filter: brightness(100%);
+  }
+
+  .card-footer {
+    transition: all ease-in-out 0.25s;
+    bottom: -100%;
+  }
+
+  &:hover {
+    .card-img {
+      transition: all ease-in-out 0.25s;
+      filter: brightness(30%);
+    }
+
+    .card-footer {
+      transition: all ease-in-out 0.25s;
+      bottom: 0;
+    }
+  }
+}

@@ -1,8 +1,7 @@
-"use client";
-
 import { GalleryItem } from "@/data/types";
 import { Card, CardFooter, Chip } from "@nextui-org/react";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 interface GalleryCardProps {
   item: GalleryItem;
@@ -11,20 +10,30 @@ interface GalleryCardProps {
 const GalleryCard: React.FC<GalleryCardProps> = ({ item }) => {
   return (
     <Card
-      className="w-[200px] h-[250px] col-span-12 sm:col-span-5 outline outline-1 outline-neutral-800"
+      className={twMerge(
+        "w-[150px] h-[250px] col-span-12 sm:col-span-5 outline outline-1 outline-neutral-800 rounded-sm",
+        "custom-card"
+      )}
       isHoverable
       isPressable
-      isFooterBlurred
     >
       <Image
         alt={item.name}
-        className="z-0 w-full h-full object-cover scale-125 -translate-y-6"
+        className={twMerge(
+          "z-0 w-full h-full object-cover scale-125",
+          "card-img"
+        )}
         src={item.image}
         fill
       />
-      <CardFooter className="absolute bottom-0 z-10">
-        <h2 className="text-md font-black z-10">{item.tag.name}</h2>
-        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-r from-black opacity-75 bg-blend-multiply"></div>
+      <CardFooter
+        className={twMerge("absolute z-10 rounded-none", "card-footer")}
+      >
+        <div className="w-full flex flex-col justify-start text-left">
+          <h2 className="text-md font-black z-10">{item.name}</h2>
+          <p className={twMerge("text-sm font-thin z-10")}>{item.tag.name}</p>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black opacity-75 bg-blend-multiply"></div>
       </CardFooter>
     </Card>
   );
