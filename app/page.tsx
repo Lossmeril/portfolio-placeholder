@@ -20,7 +20,7 @@ const Home = () => {
           )}
         >
           {portfolioItems.map((item) => (
-            <GalleryCard key={item.name} item={item} />
+            <GalleryCard key={item.image} item={item} />
           ))}
         </div>
       </div>

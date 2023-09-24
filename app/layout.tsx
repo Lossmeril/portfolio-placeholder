@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
 
-import Sidebar from "@/components/navbar";
+import Navbar from "@/components/navbar";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={font.className}>
         <Providers>
-          <Sidebar>{children}</Sidebar>
+          <Navbar>{children}</Navbar>
         </Providers>
       </body>
     </html>

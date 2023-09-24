@@ -2,20 +2,19 @@
 
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
-import { HiHome } from "react-icons/hi";
-import { BiSearch } from "react-icons/bi";
 
 import Link from "next/link";
-import { IconType } from "react-icons";
 import { twMerge } from "tailwind-merge";
 
-interface SidebarItemProps {
+import { MdLocalPhone, MdEmail } from "react-icons/md";
+
+interface NavbarItemProps {
   label: string;
   active: boolean;
   href: string;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ label, active, href }) => {
+const NavbarItem: React.FC<NavbarItemProps> = ({ label, active, href }) => {
   return (
     <Link
       href={href}
@@ -23,7 +22,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, active, href }) => {
         `
     flex flex-row h-auto items-center w-full gap-x-4 text-md font-medium cursor-pointer hover:text-white transition text-neutral-400 py-1
     `,
-        active && "text-green-500"
+        active && "text-green"
       )}
     >
       <p className="truncate w-full">{label}</p>
@@ -31,18 +30,18 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ label, active, href }) => {
   );
 };
 
-interface SidebarProps {
+interface NavbarProps {
   children: React.ReactNode;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ children }) => {
+const Navbar: React.FC<NavbarProps> = ({ children }) => {
   const pathName = usePathname();
 
   const routes = useMemo(
     () => [
       {
         label: "Portfolio",
-        active: pathName != "/film",
+        active: pathName === "/",
         href: "/",
       },
       {
@@ -54,15 +53,42 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     []
   );
 
+  console.log(pathName);
+
   return (
     <div className="flex h-full">
       <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
-        <div className="flex flex-col gap-y-4 px-5 py-4">
-          <h1>Michal Špitálský</h1>
-          <p>Lossmeril</p>
-          {routes.map((item) => (
-            <SidebarItem key={item.label} {...item} />
-          ))}
+        <div className="flex flex-col gap-y-4 px-5 py-4 justify-start h-screen">
+          <>
+            <div>
+              <h1 className="font-black lowercase text-3xl pb-0 mb-0">
+                Michal Špitálský
+              </h1>
+              <p className="font-black lowercase text-xl text-green pt-0 mt-0">
+                Lossmeril
+              </p>
+            </div>
+            <div className="my-8">
+              {routes.map((item) => (
+                <NavbarItem key={item.label} {...item} />
+              ))}
+            </div>
+          </>
+          <div>
+            <h6 className="font-black text-lg lowercase my-2">Contact me</h6>
+            <a href="tel:+420123456789" className="text-green pb-2">
+              <div className="flex flex-row h-auto items-center w-full gap-x-4 text-md font-medium cursor-pointer hover:text-white transition text-neutral-400 py-1">
+                <MdLocalPhone />
+                <p>+420 123 456 789</p>
+              </div>
+            </a>
+            <Link href="tel:+420123456789" className="text-green pb-2">
+              <div className="flex flex-row h-auto items-center w-full gap-x-4 text-md font-medium cursor-pointer hover:text-white transition text-neutral-400 py-1">
+                <MdEmail />
+                <p>michal@lossmeril.art</p>
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
       <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
@@ -70,4 +96,4 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   );
 };
 
-export default Sidebar;
+export default Navbar;

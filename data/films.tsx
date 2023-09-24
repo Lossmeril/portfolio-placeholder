@@ -11,6 +11,38 @@ export const films: Array<Film> = [
     runtime: 4,
     festivals: [{ festival: "České vize", year: 2018, award: "2nd place" }],
   },
+  {
+    name: "Somnio Ergo Sum",
+    image: "/img/film/somnio-ergo-sum.jpg",
+    year: 2023,
+    type: "short",
+    genre: "experimental animation",
+    synopsis: "",
+    runtime: 2,
+    festivals: [
+      { festival: "České vize", year: 2023, award: "2nd place" },
+      {
+        festival: "Student World Impact Film Festival",
+        year: 2023,
+        award: "finalist",
+      },
+      {
+        festival: "UNICA Korea Film Festival",
+        year: 2023,
+        award: "official selection",
+      },
+      {
+        festival: "BUT Film Festival",
+        year: 2023,
+        award: "official selection",
+      },
+      {
+        festival: "Future Gate Film Festival",
+        year: 2023,
+        award: "official selection",
+      },
+    ],
+  },
 ];
 
 export const nonAuthorFilms: Array<NonAuthorFilm> = [

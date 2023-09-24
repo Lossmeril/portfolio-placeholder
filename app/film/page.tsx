@@ -1,6 +1,6 @@
 "use client";
 
-import FilmCard from "@/components/film";
+import FilmCard from "@/components/filmCard";
 import { films, nonAuthorFilms } from "@/data/films";
 import React from "react";
 import { twMerge } from "tailwind-merge";
