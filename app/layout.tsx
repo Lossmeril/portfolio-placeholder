@@ -1,7 +1,11 @@
+"use client";
+
 import "./globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
+
+import Sidebar from "@/components/navbar";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -18,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={font.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Sidebar>{children}</Sidebar>
+        </Providers>
       </body>
     </html>
   );

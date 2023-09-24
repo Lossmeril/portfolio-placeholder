@@ -1,6 +1,6 @@
 import { Film, FilmAward, NonAuthorFilm } from "./types";
 
-const films: Array<Film> = [
+export const films: Array<Film> = [
   {
     name: "Send Me an Angel",
     image: "",
@@ -13,7 +13,7 @@ const films: Array<Film> = [
   },
 ];
 
-const nonAuthorFilms: Array<NonAuthorFilm> = [
+export const nonAuthorFilms: Array<NonAuthorFilm> = [
   {
     name: "Like Real Adults Do",
     image: "",
@@ -27,7 +27,3 @@ const nonAuthorFilms: Array<NonAuthorFilm> = [
     myRole: "production assistant",
   },
 ];
-
-const filmItems = films.concat(nonAuthorFilms);
-
-export default filmItems;
