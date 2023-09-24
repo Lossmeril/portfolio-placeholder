@@ -9,10 +9,10 @@ interface GalleryCardProps {
 
 const GalleryCard: React.FC<GalleryCardProps> = ({ item }) => {
   return (
-    <div className="basis-2/12 p-3">
+    <div className="basis-2/12 p-3 aspect-square">
       <Card
         className={twMerge(
-          "w-full h-[250px] outline outline-1 outline-neutral-800 rounded-sm",
+          "w-full h-full outline outline-1 outline-neutral-800 rounded-sm",
           "custom-card"
         )}
         isHoverable

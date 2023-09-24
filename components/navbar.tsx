@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     () => [
       {
         label: "Portfolio",
-        active: pathName === "/",
+        active: pathName != "/film",
         href: "/",
       },
       {
