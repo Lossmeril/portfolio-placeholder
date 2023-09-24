@@ -18,12 +18,19 @@ export type GalleryItem = {
 // --------- FILM
 
 export type Film = {
+  type: "short" | "feature";
+  genre: string;
   synopsis: string;
   runtime: number;
   link?: string;
   playLink?: string;
   festivals?: FilmAward[];
 } & PortfolioItem;
+
+export type NonAuthorFilm = {
+  director: string;
+  myRole: string;
+} & Film;
 
 export type FilmAward = {
   festival: string;
