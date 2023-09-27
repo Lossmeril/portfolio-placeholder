@@ -9,7 +9,7 @@ interface FilmCardProps {
 
 const FilmCard: React.FC<FilmCardProps> = ({ item }) => {
   return (
-    <div className="basis-2/12 p-3 ">
+    <div className="basis-2/12 p-3">
       <div className="aspect-[21/30]">
         <Card
           className={twMerge(

@@ -57,8 +57,8 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
 
   return (
     <div className="flex h-full">
-      <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
-        <div className="flex flex-col gap-y-4 px-5 py-4 justify-start h-screen">
+      <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px]">
+        <div className="flex flex-col gap-y-4 p-8 justify-start h-screen">
           <>
             <div>
               <h1 className="font-black lowercase text-3xl pb-0 mb-0">
@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ children }) => {
           </div>
         </div>
       </div>
-      <main className="h-full flex-1 overflow-y-auto py-2">{children}</main>
+      <main className="h-full flex-1 overflow-y-auto p-8">{children}</main>
     </div>
   );
 };

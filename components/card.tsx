@@ -9,7 +9,7 @@ interface GalleryCardProps {
 
 const GalleryCard: React.FC<GalleryCardProps> = ({ item }) => {
   return (
-    <div className="basis-2/12 p-3 ">
+    <div className="basis-4/12 lg:basis-3/12 xl:basis-2/12 p-3 ">
       <div className="aspect-square">
         <Card
           className={twMerge(
